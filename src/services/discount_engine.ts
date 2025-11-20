@@ -10,7 +10,8 @@ export class DiscountEngine {
   private readonly statsByMonth = new Map<string, MonthlyStats>();
 
   constructor() {
-    // Order matters if new rule is added which mutate monthStats
+    // Order matters if new rule is added which mutate monthStats.
+    // For a larger project these could be injected, but for the scope of this assignment chose simplicity. 
     this.rules = [new ThirdFreeRule(), new LowestPriceRule()];
   }
 
@@ -23,7 +24,7 @@ export class DiscountEngine {
     let proposedDiscount = 0;
     for (const rule of this.rules) {
       const result = rule.apply(ctx);
-      if (result.discount > 0) proposedDiscount += result.discount;
+      proposedDiscount += result.discount;
     }
 
     // Never discount more than the base price
