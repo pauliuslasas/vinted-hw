@@ -63,23 +63,23 @@ For testing `jest` library was used, to run **all tests** just type `npm test`.
 To run individual tests the easiest way is to install a `Jest runner` extension and then just pren **Run** on top of the test which you want to run.
 
 There are 4 test files:
-    1. `parsing.test.ts` ensures the input is tested
-    2. `rules.test.ts` test individual rules
-    3. `discountEngine.test.ts` tests the combined behavior of rules and monthly cap
-    4. `fileProcessor.test.ts` tests file input reading
-    5. `fulFlow.test.ts` end-to-end test with the assignments sample input
+1. `parsing.test.ts` ensures the input is tested
+2. `rules.test.ts` test individual rules
+3. `discountEngine.test.ts` tests the combined behavior of rules and monthly cap
+4. `fileProcessor.test.ts` tests file input reading
+5. `fulFlow.test.ts` end-to-end test with the assignments sample input
 
 # Adding new rules
 ----------------------------
 To add a new rule:
-    1. Create a new file `src/rules/MyNewRule.ts`
-    2. Create your new rule class and implement `DiscountRule `
-    3. Add the new rule in the `DiscountEngine`
-        ```
-        this.rules = [
-        new ThirdLFreeRule(),
-        new LowestSPriceRule(),
-        new MyNewRule(),
-        ];
-        ```
-    4. Add unit tests
+1. Create a new file `src/rules/MyNewRule.ts`
+2. Create your new rule class and implement `DiscountRule `
+3. Add the new rule in the `DiscountEngine`
+    ```
+    this.rules = [
+    new ThirdLFreeRule(),
+    new LowestSPriceRule(),
+    new MyNewRule(),
+    ];
+    ```
+4. Add unit tests
